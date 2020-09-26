@@ -1,0 +1,6 @@
+POST http://localhost:3000/f_c
+Content-Type: application/json
+
+{
+    "temperatura": 2350
+}
