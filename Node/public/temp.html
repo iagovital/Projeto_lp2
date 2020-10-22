@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title> Conversões </title>
+<script type="text/javascript" src="temp.js"></script>
+</head>
+
+<body></body>
+
+<h1>CONVERTER TEMPERATURE</h1>
+
+<form 	style="border: 1px double blue; background-color: #DDF; padding: 4px;text-align:center;" name="convert">
+
+<input type="text" name="ftemp" size="7" onchange="convertTemp('f')"> graus Fahrenheit, é o mesmo que 
+<input type="text" name="ctemp" size="7" onchange="convertTemp('c')"> graus Celsius, que é o mesmo que 
+<input type="text" name="ktemp" size="7" onchange="convertTemp('k')"> graus Kelvin.
+<br /><br />
+
+<input 	type="button" value="limpar" onclick="clearAll();">
+</form>
+</body>
+</html>
