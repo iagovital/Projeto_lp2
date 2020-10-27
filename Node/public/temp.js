@@ -51,7 +51,7 @@ class conversao {
 	  fObj.value = Math.round(parseFloat(cObj.value) * (9 / 5) + 32);
 	  Farenheit = fObj.value;
 	  let a = new conversao(Farenheit, Celsius, Kelvin);
-	  let b = new enviar("https://4ceoi.sse.codesandbox.io/enviar");
+	  let b = new enviar("https://localhost:3000/enviar");
 	  b.inserir(a).then((resposta) => {
 		console.log(resposta);
 	  });
@@ -62,7 +62,7 @@ class conversao {
 	  kObj.value = Math.round(parseFloat(cObj.value) + 273);
 	  Kelvin = kObj.value;
 	  let a = new conversao(Farenheit, Celsius, Kelvin);
-	  let b = new enviar("https://4ceoi.sse.codesandbox.io/enviar");
+	  let b = new enviar("https://localhost:3000/enviar");
 	  b.inserir(a).then((resposta) => {
 		console.log(resposta);
 	  });
