@@ -1,6 +1,7 @@
-const temp = require('../models/index');
+const temp = require("../models/index");
 
 const index = async (req, res) => {
+  console.log(req.body);
   const temps = await temp.create(req.body);
   res.json(temps);
 };

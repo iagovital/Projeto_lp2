@@ -1,5 +1,4 @@
-const { conn } = require('../db');
-
+const { conn } = require("../db");
 
 async function create(data) {
   const sql = `
@@ -10,12 +9,20 @@ async function create(data) {
   `;
 
   const db = await conn();
+  console.log(data);
 
   const { Farenheit, Celsius, Kelvin } = data;
 
   const { lastID } = await db.run(sql, [Farenheit, Celsius, Kelvin]);
+  const SQL = `
+  SELECT
+    *
+  FROM
+    temperaturas
+`;
+  const temps = await db.all(SQL);
 
-  return lastID;
+  return temps;
 }
 
 async function readAll() {

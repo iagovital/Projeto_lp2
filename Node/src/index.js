@@ -5,7 +5,7 @@ const Migration = require("./migrations");
 const { dbFile } = require("./db");
 
 const app = express();
-
+app.use(express.json());
 app.use(express.static("public"));
 app.use(routes);
 
@@ -15,7 +15,6 @@ app.use(routes);
   }
 })();
 
-
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000");
-  });
+  console.log("Servidor rodando na porta 3000");
+});

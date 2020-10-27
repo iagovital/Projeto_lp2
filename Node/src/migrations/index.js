@@ -1,4 +1,4 @@
-const { conn } = require('../db');
+const { conn } = require("../db");
 
 async function up() {
   const sql = `

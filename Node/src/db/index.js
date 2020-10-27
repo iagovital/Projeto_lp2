@@ -1,7 +1,7 @@
-const path = require('path');
-const Database = require('sqlite-async');
+const path = require("path");
+const Database = require("sqlite-async");
 
-const dbFile = path.resolve(__dirname, 'database.sqlite');
+const dbFile = path.resolve(__dirname, "database.sqlite");
 
 async function conn() {
   return await Database.open(dbFile);
