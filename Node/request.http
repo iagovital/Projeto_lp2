@@ -1,6 +1,0 @@
-POST http://localhost:3000/k_c
-Content-Type: application/json
-
-{
-    "temperatura": 4350
-}
