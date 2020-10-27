@@ -18,6 +18,11 @@ class conversao {
 		}
 	  }).then((resposta) => resposta.json());
 	}
+	listar() {
+		return fetch(this.url, {
+		  method: "GET"
+		}).then((resposta) => resposta.json());
+	  }
   }
   
   let Farenheit;
@@ -31,7 +36,7 @@ class conversao {
 	  kObj = document.convert.ktemp;
   
 	//definindo direções para conversões
-	if (direction == "f") {
+	if (direction === "f") {
 	  Farenheit = fObj.value;
 	  cObj.value = Math.round(((fObj.value - 32) / 9) * 5);
 	  Celsius = cObj.value;
@@ -44,7 +49,7 @@ class conversao {
 	  b.inserir(a).then((resposta) => {
 		console.log(resposta);
 	  });
-	} else if (direction == "k") {
+	} else if (direction === "k") {
 	  Kelvin = kObj.value;
 	  cObj.value = Math.round(kObj.value - 273);
 	  Celsius = cObj.value;
@@ -74,3 +79,23 @@ class conversao {
 	document.convert.ktemp.value = "";
   }
   
+  const view = document.getElementById("view");
+  view.onclick = function () {
+  let listar = new enviar("https://localhost:3000/mostrar");
+  listar.listar().then((resposta) => {
+    const history = document.getElementById("history");
+    for (let i = 0; i <= resposta.length - 1; i++) {
+      const li = document.createElement("li");
+      const span_celsius = document.createElement("span");
+      const span_farenheit = document.createElement("span");
+      const span_kelvin = document.createElement("span");
+      span_celsius.innerText  = resposta[i].Celsius;
+      span_farenheit.innerText = resposta[i].Farenheit;
+      span_kelvin.innerText = resposta[i].Kelvin;
+      li.append(span_celsius);
+      li.append(span_farenheit);
+      li.append(span_kelvin);
+      history.append(li);
+    }
+  });
+};

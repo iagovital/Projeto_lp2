@@ -6,10 +6,9 @@ const index = async (req, res) => {
   res.json(temps);
 };
 
-const readAll = async (req, res) => {
+const readAll2 = async (req, res) => {
   const temps = await temp.readAll();
-
   res.json(temps);
 };
 
-module.exports = { index, readAll };
+module.exports = { index, readAll2 };

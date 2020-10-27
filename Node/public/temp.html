@@ -10,15 +10,18 @@
 
 <h1>CONVERTER TEMPERATURE</h1>
 
-<form 	style="border: 1px double blue; background-color: #DDF; padding: 4px;text-align:center;" name="convert">
+<form style="border: 1px double blue; background-color: #DDF; padding: 4px;text-align:center;" name="convert">
 
 <input type="text" name="ftemp" size="7" onchange="convertTemp('f')"> graus Fahrenheit, é o mesmo que 
 <input type="text" name="ctemp" size="7" onchange="convertTemp('c')"> graus Celsius, que é o mesmo que 
 <input type="text" name="ktemp" size="7" onchange="convertTemp('k')"> graus Kelvin.
 <br /><br />
 
-<input 	type="button" value="limpar" onclick="clearAll();">
+<input type="button" value="limpar" onclick="clearAll()">
+<button id="view">histórico</button>
+<ul id="history"></ul>
 </form>
+
 <script type="text/javascript" src="temp.js"></script>
 </body>
 </html>
