@@ -40,7 +40,7 @@ class conversao {
 	  Kelvin = kObj.value;
 	  let a = new conversao(Farenheit, Celsius, Kelvin);
 	  console.log(Farenheit, Celsius, Kelvin);
-	  let b = new enviar("https://4ceoi.sse.codesandbox.io/enviar");
+	  let b = new enviar("https://localhost:3000/enviar");
 	  b.inserir(a).then((resposta) => {
 		console.log(resposta);
 	  });
